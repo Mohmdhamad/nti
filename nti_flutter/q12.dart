@@ -3,18 +3,27 @@ import 'dart:math';
 
 void main() {
   int number = int.parse(stdin.readLineSync()!);
-  calc(number);
-  var name = Varia('samia');
-}
-
-void calc(int num) {
-  print(++num);
-  print(--num);
-  int x = num * 0;
-  print(x);
+  var x = Varia(number);
+  x.add();
+  x.minus();
+  x.reset();
 }
 
 class Varia {
-  final String name;
-  Varia(this.name);
+  final int value;
+  int num;
+  Varia(this.value) : num = value;
+
+  void add() {
+    print(++num);
+  }
+
+  void minus() {
+    print(--num);
+  }
+
+  void reset() {
+    num = 0;
+    print(num);
+  }
 }
